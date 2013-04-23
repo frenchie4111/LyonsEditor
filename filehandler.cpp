@@ -22,22 +22,7 @@ QString read_from_file(QString file) {
     QFile data(file);
     if( data.open(QFile::ReadOnly) ) {
         QTextStream in(&data);
-        while( !in.atEnd() ) {
-            QString line = in.readLine();
-
-            line = convert_to_html(line);
-
-            new_string.append(convert_to_html( line ) + "<br/>");
-        }
+        new_string = in.readAll();
     }
-    return new_string;
-}
-
-QString convert_to_html(QString text) {
-    QString new_string = text;
-
-    new_string = new_string.replace(QRegExp("\\t"),QString("&nbsp;&nbsp;&nbsp;&nbsp;"));
-    new_string = new_string.replace(QRegExp("\\s"),QString("&nbsp;"));
-
     return new_string;
 }

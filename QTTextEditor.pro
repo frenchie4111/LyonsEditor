@@ -14,9 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    filehandler.cpp
+    filehandler.cpp \
+    highlighter.cpp \
+    file.cpp
 
 HEADERS  += mainwindow.h \
-    filehandler.h
+    filehandler.h \
+    highlighter.h \
+    file.h
 
 FORMS    += mainwindow.ui
